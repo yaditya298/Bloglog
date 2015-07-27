@@ -1,0 +1,15 @@
+<div id = "incenter">
+<%= form_for([@article,@article.comments.build]) do |f| %>
+	<p>
+		<%= f.label :commenter %><br>
+		<%= f.text_field :commenter %>
+	</p>
+	<p>
+		<%= f.label :body %>
+		<%= f.text_area :body %>
+	</p>
+	<p id = "comsubmit">
+		<%= f.submit %>
+	</p>
+<% end %>
+</div>

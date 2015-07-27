@@ -1,0 +1,201 @@
+<h1>Hi, there!</h1>
+<p id = "welbut">
+  | <%= link_to 'Enter' , class: "btn btn-md btn-primary" , controller: 'articles' %> |
+</p>
+
+
+<!DOCTYPE html>
+	<html lang="en">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	
+	
+	
+	
+	<style type="text/css">
+	/* GLOBAL STYLES
+	-------------------------------------------------- */
+	/* Padding below the footer and lighter body text */
+	
+	body {
+	padding-bottom: 40px;
+	color: #5a5a5a;
+	}
+	
+	
+	
+	/* CUSTOMIZE THE NAVBAR
+	-------------------------------------------------- */
+	
+	/* Special class on .container surrounding .navbar, used for positioning it into place. */
+	.navbar-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 20;
+	}
+	
+	/* Flip around the padding for proper display in narrow viewports */
+	.navbar-wrapper .container {
+	padding-left: 0;
+	padding-right: 0;
+	}
+	.navbar-wrapper .navbar {
+	padding-left: 15px;
+	padding-right: 15px;
+	}
+	
+	
+	/* CUSTOMIZE THE CAROUSEL
+	-------------------------------------------------- */
+	
+	/* Carousel base class */
+	.carousel {
+	height: 350px;
+	margin-bottom: 60px;
+	padding-top: 20px;
+	
+	}
+	/* Since positioning the image, we need to help out the caption */
+	.carousel-caption {
+	z-index: 10;
+	color:white;
+	}
+	
+	/* Declare heights because of positioning of img element */
+	.carousel .item {
+	height: 350px;
+	background-color: black;
+	background: rgba(0, 0, 0, .6);
+	
+	
+	}
+	.carousel-inner > .item > img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	min-width: 100%;
+	height: 350px;
+
+	}
+	
+
+	
+	/* RESPONSIVE CSS
+	-------------------------------------------------- */
+	
+	@media (min-width: 768px) {
+	
+	/* Remove the edge padding needed for mobile */
+	.marketing {
+	padding-left: 0;
+	padding-right: 0;
+	}
+	
+	/* Navbar positioning foo */
+	.navbar-wrapper {
+	margin-top: 20px;
+	}
+	.navbar-wrapper .container {
+	padding-left: 15px;
+	padding-right: 15px;
+	}
+	.navbar-wrapper .navbar {
+	padding-left: 0;
+	padding-right: 0;
+	}
+	
+	/* The navbar becomes detached from the top, so we round the corners */
+	.navbar-wrapper .navbar {
+	border-radius: 4px;
+	}
+	
+	/* Bump up size of carousel content */
+	.carousel-caption p {
+	margin-bottom: 20px;
+	font-size: 21px;
+	line-height: 1.4;
+	}
+	
+	.featurette-heading {
+	font-size: 50px;
+	}
+	
+	}
+	
+	@media (min-width: 992px) {
+	.featurette-heading {
+	margin-top: 120px;
+	}
+	}
+	</style>
+	</head>
+	
+	
+	
+	<!-- Carousel
+	================================================== -->
+	<div id="myCarousel" class="carousel slide" data-ride="carousel">
+	<!-- Indicators -->
+	<ol class="carousel-indicators">
+	<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+	<li data-target="#myCarousel" data-slide-to="1"></li>
+	<li data-target="#myCarousel" data-slide-to="2"></li>
+	</ol>
+	<div class="carousel-inner">
+	<div class="item active">
+	<!--< image_tag() >-->
+	<div class="container">
+	<div class="carousel-caption">
+	<h1>Tell your thoughts!</h1>
+	<p>No ! Don't tell your thoughts.. but share them!</p>
+	<p>Yes! share them.. to save them!</p>	
+	<!-- <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>-->
+	</div>
+	</div>
+	</div>
+	<div class="item">
+	<!--< image_tag() >-->
+	<div class="container">
+	<div class="carousel-caption" id = "c2">
+	<h1>Update status!</h1>
+	<p>No! Yes.. it's a clear NO. Don't update status... but update yourself..</p>
+	<p>Yes! If you update yourself your status is updated inherently</p>
+	<!--<p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>-->
+	</div>
+	</div>
+	</div>
+	<div class="item">
+	<!--< image_tag() >-->
+	<div class="container">
+	<div class="carousel-caption">
+	<h1>Comment!</h1>
+	<p>Yes! Comment.. For none to become one</p><p>they should run to comment one!</p>
+	<!--<p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>-->
+	</div>
+	</div>
+	</div>
+	</div>
+	<a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+	<a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+	</div><!-- /.carousel -->
+	
+	
+	
+	<!-- /END THE FEATURETTES -->
+	
+	
+	<!-- FOOTER -->
+	
+	
+	<p>&copy; is with &middot; Aditya </p>
+	
+	
+	</div><!-- /.container -->
+	
+	</body>
+	</html>

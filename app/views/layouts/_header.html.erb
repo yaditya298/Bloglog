@@ -1,0 +1,11 @@
+<header style="background:white !important" class="navbar navbar-fixed-top navbar-inverse">
+  
+  <div style="background:white !important" class="container">
+    <%= link_to "Home", root_path, id: "logo" %>
+  	<div class="col-lg-2 col-xs-offset-9">
+  		<%= form_tag articles_path, :method => :get, :id => "sear" do %>
+  		<%= search_field_tag :search, params[:search], :placeholder => "Search.." %>
+    	<% end %>
+  	</div>	
+  </div>
+</header>

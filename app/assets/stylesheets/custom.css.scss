@@ -1,0 +1,198 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* universal */
+
+body {
+  padding-top: 70px;
+  background: url(bg.jpg) black;
+  opacity: 1;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+}
+
+.center h1 {
+  margin-bottom: 30px;
+}
+
+#welbut {
+  text-align: center;
+}
+
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  color: white;
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: white;
+}
+
+
+
+#newart {
+  text-align: center;
+}
+
+#edlink {
+  background-color: green;
+}
+
+#creartback {
+  text-align: center;
+}
+
+#editback {
+  text-align: center;
+}
+
+.link-color{
+  color: "red";
+}
+
+table, th, td {
+  border: 0.5px solid black;
+}
+
+th {
+  background-color: orangered;
+  color: black;
+  height: 40px;
+  text-align: center;
+}
+
+td {
+  padding: 15px;
+}
+
+#sear {
+  padding-top: 9px;
+}
+
+
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: black;
+  /*text-transform: uppercase;*/
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: gray;
+}
+
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 2px;
+  border-top: 1px solid gray;
+  color: #777;
+}
+
+footer a {
+  color: #555;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid black;
+  width: 100%;
+  margin-bottom: 15px;
+  /*@include box_sizing;*/
+  color:black;
+}
+
+form {
+  align: "center";
+}
+
+#submit{
+  width: 8em;  height: 2em;
+  text-align: center;
+}
+
+#comsubmit{
+  width: 8em;  height: 2em;
+  text-align: center;
+}
+
+.center {
+  margin: auto;
+  width: 60%;
+  border:3px solid #8AC007;
+  padding: 10px;
+}
+
+
+div {
+  color: white;
+}
+
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+

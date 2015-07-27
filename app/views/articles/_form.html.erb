@@ -1,0 +1,36 @@
+<div class = "container">
+	<div class="row">
+  	<div class="col-md-6 col-md-offset-3">
+			<%= form_for @article do |f| %>
+				<% if @article.errors.any? %>
+					<div id = "error_explanation">
+						<h2>
+							<%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved
+						</h2>
+						<ul>
+							<% @article.errors.full_messages.each do |msg| %>
+								<li><%= msg %></li>
+							<% end %>
+						</ul>
+						<hr>
+					</div>
+				<% end %>
+				<p>
+					<%= f.label :author %>
+					<%= f.text_field :author %>
+				</p>
+				<p>
+					<%= f.label :title %>
+					<%= f.text_field :title %>
+				</p>
+				<p>
+					<%= f.label :text %>
+					<%= f.text_area :text %>
+				</p>
+				<p id = "submit">
+					<%= f.submit %>
+				</p>
+			<% end %>
+		</div>
+	</div>	
+</div>
