@@ -7,8 +7,13 @@ class ArticlesController < ApplicationController
 			@search = Article.search do
 			  fulltext params[:search]			
 			end
-			@articles = @search.results
+		@articles = @search.results
+		if @search.results.blank?
+			render 'notfound'
+		end
 	end
+
+	
 
 	def show
 		@article = Article.find(params[:id])

@@ -1,0 +1,29 @@
+<h1>Blog Log</h1>
+
+<table>
+	<tr style="border-bottom: 0.1px solid orange">
+		<th>Author</th>
+		<th>Title</th>
+		<th>Text</th>
+		<th>Created on</th>
+		<th colspan = "3">Options</th>
+		<th colspan = "3"></th>
+	</tr>
+
+	<% @search.results.reverse.each do |article| %>
+		<tr style="border-bottom: 0.1px solid grey">
+			<td><%= article.author %></td>
+			<td><%= article.title %></td>
+			<td><%= article.text %></td>
+			<td><%= article.created_at %></td>
+			<td><%= link_to 'Show', article_path(article), class: "btn btn-sm btn-primary" %></td>
+			<td><%= link_to 'Edit', edit_article_path(article), class: "btn btn-sm btn-primary" %></td>
+			<td><%= link_to 'Delete', article_path(article), class: "btn btn-sm btn-primary", method: :delete, data: { confirm: 'Are you sure?' }%></td>
+		</tr>
+	<% end %>
+</table>
+<hr>
+<p id = "newart">
+  | <%= link_to 'Back', class: "btn btn-md btn-primary" , controller: 'articles' %> |
+</p>
+<p class="pull-right"><a href="#">Back to top</a></p>

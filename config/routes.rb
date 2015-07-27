@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   resources :articles do
+    #get :autocomplete_article_author#, :on => :collection
     resources :comments
   end
   # You can have the root of your site routed with "root"

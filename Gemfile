@@ -43,6 +43,7 @@ gem 'slim_assets' # Added by Aditya
 #gem 'nested_form' # Added by Aditya
 gem 'sunspot_rails' # Added by Aditya
 gem 'sunspot_solr' # Added by Aditya
+gem 'rails3-jquery-autocomplete' # Added by Aditya
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
