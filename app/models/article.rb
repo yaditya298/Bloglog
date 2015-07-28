@@ -6,6 +6,6 @@ class Article < ActiveRecord::Base
 	validates :author, presence: true, length: { minimum:5 }
 
 	searchable do
-		text :author, :title, :text
+		text :title, :author, :text
 	end
 end

@@ -16,7 +16,11 @@
 </p>
 <hr>
 <h2><strong style="color:lightseagreen">Comments</strong></h2>
-<%= render @article.comments %>
+<% if @article.comments.blank? %>
+	<p>No comments yet</p>
+<% else %>
+ <%= render @article.comments %>
+<%end%>
 
 <hr>
 <h2><strong style="color:lightseagreen">Add a comment</strong></h2>
