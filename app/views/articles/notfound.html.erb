@@ -2,7 +2,20 @@
 <hr>
 <h2>No items found</h2>
 
-<p id = "nf"><%= image_tag "notfound2.jpg" %></p>
+
+
+<div class="row">
+  <div class="col-md-offset-2 col-md-8">
+    <div class="panel-heading">
+     	<div class="text-center">
+       	<%= image_tag "notfound2.jpg", :align => "center" , :class => "img img-rounded img-responsive" %>
+      </div>
+    </div>
+  </div>
+</div>    
+
+
+
 <hr>
 <p id = "newart">
   | <%= link_to 'Back', class: "btn btn-md btn-primary" , controller: 'articles' %> |

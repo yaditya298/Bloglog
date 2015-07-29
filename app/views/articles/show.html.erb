@@ -1,5 +1,10 @@
 <hr>
 <h2><strong style="color:lightseagreen">Blog</strong></h2>
+<% if flash[:bloginfo] %>
+  <div class="alert alert-success">
+   	<strong>Success!</strong> <%= flash[:bloginfo] %>
+  </div>	
+<% end %>
 <p>
 	<strong style="color:orangered">Author:</strong>
 	<%= @article.author %>
@@ -14,12 +19,20 @@
   <strong style="color:orangered">Text:</strong>
   <%= @article.text %>
 </p>
+
 <hr>
 <h2><strong style="color:lightseagreen">Comments</strong></h2>
+<% if flash[:cominfo] %>
+  <div class="alert alert-success">
+   	<strong>Success!</strong> <%= flash[:cominfo] %>
+  </div>	
+<% end %>
+
 <% if @article.comments.blank? %>
 	<p>No comments yet</p>
 <% else %>
  <%= render @article.comments %>
+
 <%end%>
 
 <hr>

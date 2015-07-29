@@ -34,6 +34,8 @@ textarea {
 }
 
 
+
+
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -79,8 +81,16 @@ h2 {
   color: "red";
 }
 
-table, th, td {
+table,  td {
   border: 0.5px solid black;
+}
+
+table {
+  width: 100%;
+}
+
+.button {
+  color:green;
 }
 
 th {
@@ -91,7 +101,7 @@ th {
 }
 
 td {
-  padding: 15px;
+  padding: 5px;
 }
 
 #sear {

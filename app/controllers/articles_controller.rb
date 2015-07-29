@@ -31,6 +31,7 @@ class ArticlesController < ApplicationController
   	@article = Article.new(article_params)
  
   	if @article.save
+  		flash[:bloginfo] = "Hi #{@article.author}! your blog is created successfully"
   		redirect_to @article
   	else
   		render 'new'
@@ -50,7 +51,7 @@ class ArticlesController < ApplicationController
 	def destroy
 		@article = Article.find(params[:id])
 		@article.destroy
-
+		flash[:notice] = "Blog \"#{@article.text.to_s.slice(0..9)}...\" deleted successfully"
 		redirect_to articles_path
 	end
  

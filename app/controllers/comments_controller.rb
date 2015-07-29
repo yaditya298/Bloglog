@@ -9,6 +9,11 @@ class CommentsController < ApplicationController
 	def create
 		@article = Article.find(params[:article_id])
 		@comment = @article.comments.create(comment_params)
+		if @article.save
+  		flash[:cominfo] = "Hi #{@comment.commenter}! your comment is posted successfully"
+  	else
+  		render 'new'
+  	end
 		redirect_to article_path(@article)
 	end
 

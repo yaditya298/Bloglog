@@ -5,18 +5,27 @@
 </p>
 <p> </p>
 <p> </p>
+
 <hr>
 
-<table>
+<% if flash[:notice] %>
+  <div class="alert alert-danger">
+  	<%= flash[:notice] %>
+  </div>
+  <hr>	
+<% end %>
+
+
+<table align = "left">
 	<tr style="border-bottom: 0.1px solid orange">
 		<th>Author</th>
 		<th>Title</th>
-		<th>Text</th>
-		<th>Created on</th>
+		<th style="width:50%">Text</th>
+		<th style="width:10%">Created on</th>
 		<th colspan = "3">Options</th>
-		<th colspan = "3"></th>
 	</tr>
 
+	<tbody>
 	<% @articles.reverse.each do |article| %>
 		<tr style="border-bottom: 0.1px solid grey">
 			<td><%= article.author %></td>
@@ -28,7 +37,10 @@
 			<td><%= link_to 'Delete', article_path(article), class: "btn btn-sm btn-primary", method: :delete, data: { confirm: 'Are you sure?' }%></td>
 		</tr>
 	<% end %>
+	</tbody>
 </table>
+
+<p style = "center">→</p>
 <hr>
 <p id = "newart">
   | <%= link_to 'Write a Blog', new_article_path, class: "btn btn-md btn-primary" %> |
@@ -36,4 +48,4 @@
 <p id = "newart">
   | <%= link_to 'Back', class: "btn btn-md btn-primary" , controller: 'articles' %> |
 </p>
-<p class="pull-right"><a href="#">Back to top</a></p>
+<p class="pull-right"><a href="#">↑Back to top</a></p>
