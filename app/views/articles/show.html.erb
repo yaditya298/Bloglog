@@ -1,7 +1,9 @@
+<div class="col-md">
 <hr>
 <h2><strong style="color:lightseagreen">Blog</strong></h2>
 <% if flash[:bloginfo] %>
-  <div class="alert alert-success">
+  <div class="alert alert-success fade in">
+    <a href="#" class="close" data-dismiss="alert">&times;</a>
    	<strong>Success!</strong> <%= flash[:bloginfo] %>
   </div>	
 <% end %>
@@ -23,7 +25,8 @@
 <hr>
 <h2><strong style="color:lightseagreen">Comments</strong></h2>
 <% if flash[:cominfo] %>
-  <div class="alert alert-success">
+  <div class="alert alert-success fade in">
+    <a href="#" class="close" data-dismiss="alert">×</a>
    	<strong>Success!</strong> <%= flash[:cominfo] %>
   </div>	
 <% end %>
@@ -36,6 +39,7 @@
 <%end%>
 
 <hr>
+<div class="col-md-6 col-md-offset-3">
 <h2><strong style="color:lightseagreen">Add a comment</strong></h2>
 <%= render 'comments/form' %>
 
@@ -44,3 +48,5 @@
   | <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-md btn-primary" %> |
   <%= link_to 'Back', articles_path, class: "btn btn-md btn-primary" %> |
 </p>
+</div>
+</div>

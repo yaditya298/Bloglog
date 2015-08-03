@@ -1,0 +1,15 @@
+h1 Blog Log
+hr
+h2 No items found
+.row
+  .col-md-offset-2.col-md-8
+    .panel-heading
+      .text-center
+        = image_tag "notfound2.jpg", :align => "center" , :class => "img img-rounded img-responsive"
+hr
+p#newart
+  = link_to 'Back', class: "btn btn-md btn-primary" , controller: 'articles'
+
+p.pull-right
+  a[href="#"] Back to top
+  

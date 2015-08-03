@@ -19,7 +19,9 @@ class ArticlesController < ApplicationController
 		@article = Article.find(params[:id])
 	end
 
+
 	def new
+		PrivatePub.publish_to("/articles/new", article: @article)
 		@article = Article.new
 	end
 
@@ -51,8 +53,17 @@ class ArticlesController < ApplicationController
 	def destroy
 		@article = Article.find(params[:id])
 		@article.destroy
-		flash[:notice] = "Blog \"#{@article.text.to_s.slice(0..9)}...\" deleted successfully"
-		redirect_to articles_path
+		count = 0
+		texlet_count = @article.text.to_s.split(" ")
+		texlet_count.each {|s| count += s.length}
+		if count > 20
+			flash[:blogdel] = "Blog \"#{@article.text.to_s.slice(0..15)}...\" deleted successfully"
+			redirect_to articles_path
+		else
+			c = count
+			flash[:blogdel] = "Blog \"#{@article.text.to_s.slice(0..c)}\" deleted successfully"
+			redirect_to articles_path
+		end
 	end
  
 	private
