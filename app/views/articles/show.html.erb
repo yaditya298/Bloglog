@@ -13,11 +13,6 @@
 </p>
 
 <p>
-  <strong style="color:orangered">Title:</strong>
-  <%= @article.title %>
-</p>
- 
-<p>
   <strong style="color:orangered">Text:</strong>
   <%= @article.text %>
 </p>
@@ -35,8 +30,7 @@
 	<p>No comments yet</p>
 <% else %>
  <%= render @article.comments %>
-
-<%end%>
+<% end %>
 
 <hr>
 <div class="col-md-6 col-md-offset-3">

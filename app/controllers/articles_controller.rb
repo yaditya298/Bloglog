@@ -1,24 +1,24 @@
 class ArticlesController < ApplicationController
 
-	http_basic_authenticate_with name: "Tcs", password: "secret", except: [:index, :show, :new, :create]
+	http_basic_authenticate_with name: "TCS", password: "secret", except: [:index, :show, :new, :create]
 	
 	def index
-		@articles = Article.all
+		if params[:search].nil?
+			@articles = Article.all
+		else
 			@search = Article.search do
-			  fulltext params[:search]			
+				fulltext params[:search]
+			end	
+			@articles = @search.results
+			if @search.results.blank?
+				render 'notfound'
 			end
-		@articles = @search.results
-		if @search.results.blank?
-			render 'notfound'
 		end
 	end
-
-	
 
 	def show
 		@article = Article.find(params[:id])
 	end
-
 
 	def new
 		PrivatePub.publish_to("/articles/new", article: @article)
@@ -68,6 +68,6 @@ class ArticlesController < ApplicationController
  
 	private
   	def article_params
-    	params.require(:article).permit(:author,:title, :text)
+    	params.require(:article).permit(:author, :text)
   	end
 end

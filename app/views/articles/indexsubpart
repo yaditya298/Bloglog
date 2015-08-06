@@ -4,7 +4,6 @@
 <table align = "left">
 	<tr style="border-bottom: 0.1px solid orange">
 		<th>Author</th>
-		<th>Title</th>
 		<th style="width:50%">Text</th>
 		<th style="width:10%">Created on</th>
 		<th colspan = "3">Options</th>
@@ -14,7 +13,6 @@
 	<% @articles.reverse.each do |article| %>
 		<tr style="border-bottom: 0.1px solid grey">
 			<td><%= article.author %></td>
-			<td><%= article.title %></td>
 			<td><%= article.text %></td>
 			<td><%= article.created_at.to_s.slice(0..19) %></td>
 			<td><%= link_to 'Show', article_path(article), class: "btn btn-sm btn-primary" %></td>
@@ -32,7 +30,6 @@
 <table align = "left">
 	<tr style="border-bottom: 0.1px solid orange">
 		<th>Author</th>
-		<th>Title</th>
 		<th style="width:50%">Text</th>
 		<th style="width:10%">Created on</th>
 		<th colspan = "3">Options</th>
@@ -42,7 +39,6 @@
 	<% @articles.reverse.each do |article| %>
 		<tr style="border-bottom: 0.1px solid grey">
 			<td><%= article.author %></td>
-			<td><%= article.title %></td>
 			<td><%= article.text %></td>
 			<td><%= article.created_at.to_s.slice(0..19) %></td>
 			<td><div class="btn-group pull-right">
@@ -64,7 +60,6 @@
 <% @articles.reverse.each do |article| %>
 	<ul>
 	<%= article.author %>
-	<%= article.title %>
 	<%= article.text %>
 	<%= article.created_at.to_s.slice(0..19) %>
 		<div class="btn-group pull-right">

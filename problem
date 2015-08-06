@@ -1,0 +1,71 @@
+<div class = "row">
+  <div class="col-sm-2" id = "lsbar">
+    <ul class="nav nav-stacked nav-pills">
+      <li class="active"><a href="#">Notes</a></li>
+      <li><a href="#">Images</a></li>
+      <li><a href="#">Book marks</a></li>
+    </ul>
+
+    <div class="container">
+    <div class="row">
+      <nav class="col-sm-3">
+        <div id="blogo" data-spy="affix">
+          <%= image_tag "Bloglogo.jpg", :align => "left" , :class => "img img-responsive" %>
+        </div>
+      </nav>
+    </div>
+    </div>
+  </div>
+  <div class = "col-sm">
+  <div class="verticalLine col-md-offset-2">
+  <% if flash[:blogdel] %>
+    <div class="alert alert-danger">
+     <a href="#" class="close" data-dismiss="alert">&times;</a>
+     <%= flash[:blogdel] %>
+    </div>
+  <% end %>
+  </div>
+  <div id = "timeline">
+    <% @articles.reverse.each do |article| %>
+    <ul>
+    <div>
+     <div class = "authortitle"><h2 style = "color:orangered"><%= article.author %></h2></div>
+     <div class = "credate col-sm"><%= article.created_at.to_s.slice(0..19) %></div>
+    </div>
+    <%= article.text %>
+  
+    <div class="btn-group pull-right">
+      <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown">
+      ... </button>
+      <ul class="dropdown-menu" role="menu">
+        <li><%= link_to 'Show', article_path(article) %></li>
+        <li><%= link_to 'Edit', edit_article_path(article) %></li>
+        <li><%= link_to 'Delete', article_path(article), method: :delete, data: { confirm: 'Are you sure?' }%></li>                 
+      </ul>
+    </div>
+    </ul>
+    <hr style = "width:90%; border: 1px dotted black;">
+    <% end %>
+  </div>
+</div>
+
+
+<!-- Solution developed for the problem -->
+
+<div class = "container">
+  <div class = "row">
+    <div class="col-sm-2" id = "lsbar">
+      <ul class="nav nav-stacked">
+        <li><a href="#">Notes</a></li>
+        <li><a href="#">Images</a></li>
+        <li><a href="#">Book marks</a></li>
+      </ul>
+      <div id="blogo" data-spy="affix">
+        <%= image_tag "Bloglogo.jpg", :align => "left" , :class => "img img-responsive" %>
+      </div>
+    </div>
+  </div>
+  <div class = "row">  
+    <div class="verticalLine col-md-offset-2"></div>
+  </div>
+</div>

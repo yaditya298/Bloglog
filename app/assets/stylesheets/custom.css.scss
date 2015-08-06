@@ -75,6 +75,22 @@ h2 {
   border-left: 1px solid skyblue;
 }
 
+#hrstyler {
+
+}
+
+
+.authortitle {
+  display:inline-block;
+}
+
+.credate {
+  display:inline-block;
+  padding-left: 10px;
+  color: gray;
+  font-size: 0.9em;
+}
+
 #newart {
   text-align: center;
 }
@@ -87,8 +103,16 @@ h2 {
   text-align: center;
 }
 
+#optgro {
+  padding-right: 51px;
+}
+
 #editback {
   text-align: center;
+}
+
+#blogo {
+  padding-top: 10px;
 }
 
 .link-color{
@@ -223,4 +247,3 @@ input {
     color: $state-danger-text;
   }
 }
-

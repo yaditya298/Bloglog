@@ -37,7 +37,7 @@
 <% end %>
 
 <div id = "timeline">
-<% @articles.reverse.each do |article| %>
+<% Article.all.reverse.each do |article| %>
   <ul>
   <div>
      <div class = "authortitle"><h2 style = "color:orangered"><%= article.author %></h2></div>
@@ -46,7 +46,7 @@
   
   <%= article.text %>
   
-    <div class="btn-group pull-right" id = "optgro">
+    <div class="btn-group pull-right">
       <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown">
       ... </button>
       <ul class="dropdown-menu" role="menu">
@@ -58,8 +58,8 @@
   </ul>
   <hr style = "width:90%; border: 1px dotted black;">
 <% end %>
-</div>
 
+</div>
 </div>
 </div>
 </div>
