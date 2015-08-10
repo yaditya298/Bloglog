@@ -1,13 +1,19 @@
 Rails.application.routes.draw do
+  get 'users/new'
+
   get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  resources :articles do
-    #get :autocomplete_article_author#, :on => :collection
-    resources :comments
+  resources :users do
+    resources :articles do
+      #get :autocomplete_article_author#, :on => :collection
+      resources :comments
+    end
   end
+
+  #maget 'signup' => 'users#new'
   # You can have the root of your site routed with "root"
   root 'welcome#index'
 

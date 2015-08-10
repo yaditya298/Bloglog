@@ -9,8 +9,8 @@
 <hr>
 <!--problem begin-->
 
-<div class = "container">
-<div class="container col-sm-2" id = "lsbar">
+
+<div class="row col-xs-2" id = "lsbar">
   <ul class="nav nav-stacked">
     <li><a href="#">Notes</a></li>
     <li><a href="#">Images</a></li>
@@ -24,11 +24,16 @@
         </div>
       </nav>
     </div>
-    </div> 
+  </div> 
 </div>
 
-<div class = "col-sm">
-<div class="verticalLine col-md-offset-2">
+
+
+
+
+<div class="row col-xs-8" id = "jright">
+
+
 <% if flash[:blogdel] %>
   <div class="alert alert-danger">
     <a href="#" class="close" data-dismiss="alert">&times;</a>
@@ -36,8 +41,8 @@
   </div>
 <% end %>
 
-<div id = "timeline">
-<% @articles.reverse.each do |article| %>
+<% paginate @articles %>
+<% @articles.each do |article| %>
   <ul>
   <div>
      <div class = "authortitle"><h2 style = "color:orangered"><%= article.author %></h2></div>
@@ -47,8 +52,7 @@
   <%= article.text %>
   
     <div class="btn-group pull-right" id = "optgro">
-      <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown">
-      ... </button>
+      <button type="button" class="btn btn-primary btn-xs dropdown-toggle" data-toggle="dropdown">…</button>
       <ul class="dropdown-menu" role="menu">
         <li><%= link_to 'Show', article_path(article) %></li>
         <li><%= link_to 'Edit', edit_article_path(article) %></li>
@@ -58,13 +62,12 @@
   </ul>
   <hr style = "width:90%; border: 1px dotted black;">
 <% end %>
-</div>
 
-</div>
-</div>
-</div>
-<!--problem end-->
-<p style = "center">→</p>
+<p id = "newart">
+  | <%= link_to 'More..','#', onclick:  'alert("No more please ☺!"),loadmore();)', class: "btn btn-md btn-primary" %> |
+</p>
+
+
 <hr>
 <p id = "newart">
   | <%= link_to 'Write a Blog', new_article_path, class: "btn btn-md btn-primary" %> |
@@ -73,3 +76,8 @@
   | <%= link_to 'Back', class: "btn btn-md btn-primary" , controller: 'articles' %> |
 </p>
 <p class="pull-right"><a href="#">↑Back to top</a></p>
+</div>
+
+<!--problem end-->
+
+

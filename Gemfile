@@ -46,6 +46,7 @@ gem 'sunspot_solr' # Added by Aditya
 gem 'rails3-jquery-autocomplete' # Added by Aditya
 #gem 'erb2slim' # Added by Aditya
 gem 'private_pub' # Added by Aditya
+gem 'kaminari' # Added by Aditya
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

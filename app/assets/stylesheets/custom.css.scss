@@ -5,7 +5,11 @@
 
 body {
   padding-top: 70px;
+  padding-left: 0px;
+  /*background: linear-gradient(black,lightgray);*/
+  /*background: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,1));*/
   background: url(bg.jpg) black;
+  /*background-repeat: no-repeat;*/
   opacity: 1;
 }
 
@@ -39,9 +43,15 @@ textarea {
   overflow:auto;
 }
 
-#lsbar {
-  
+
+/* for placing a scrollbar for timeline same logic to be applied for any scrollbar*/
+#jright {
+  /*overflow-x: hidden;*/
+  /*overflow-y: auto;*/
+  /*height: 1000px;*/
+  /*width: 980px; */
 }
+
 
 
 /* typography */
@@ -87,7 +97,7 @@ h2 {
 .credate {
   display:inline-block;
   padding-left: 10px;
-  color: gray;
+  color: lightseagreen;
   font-size: 0.9em;
 }
 
@@ -104,7 +114,7 @@ h2 {
 }
 
 #optgro {
-  padding-right: 51px;
+  
 }
 
 #editback {
@@ -127,8 +137,32 @@ table {
   width: 100%;
 }
 
-.button {
-  color:green;
+#optgro .btn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 10px;
+  padding: 8px 5px 6px 6px;
+  border: solid #3498db 0px;
+  text-decoration: none;
+}
+
+#optgro .btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
 }
 
 th {

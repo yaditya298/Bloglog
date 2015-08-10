@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
 	
 	def index
 		if params[:search].nil?
-			@articles = Article.all
+			@articles = Article.all.order("created_at DESC").page(params[:page]).per(8)
 		else
 			@search = Article.search do
 				fulltext params[:search]
